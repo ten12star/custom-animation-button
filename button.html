@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        .btn-success {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-success:before {
+            content: "";
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: auto;
+            width: 140%;
+            height: calc(100% + 2px);
+            transform-origin: 0% 100%;
+            backface-visibility: hidden;
+            transform: rotate3d(0, 0, 1, -15deg) translate3d(-1.5em, -120%, 0);
+            transition: transform .3s ease;
+        }
+        .btn-success:hover:before {
+            background-color: #458fff;
+            transform: rotate3d(0, 0, 1, 0deg) translate3d(0, 0, 0);
+        }
+        .btn-success:hover span {
+            position: sticky;
+        }
+    </style>
+</head>
+<body>
+    <div class="container pt-5">
+        <button class="btn btn-success"><span>Buy Now</span></button>
+    </div>
+</body>
+</html>
